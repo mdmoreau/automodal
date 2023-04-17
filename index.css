@@ -1,0 +1,130 @@
+:focus {
+  background: red;
+}
+
+img,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+  aspect-ratio: 16 / 9;
+}
+
+#demo {
+  display: none;
+}
+
+.Automodal #demo {
+  display: block;
+}
+
+:root:has(.Automodal) {
+  overflow: hidden;
+}
+
+.Automodal {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: opacity 300ms;
+  background: rgba(0 0 0 / 75%);
+  opacity: 0;
+  overflow: hidden;
+}
+
+.Automodal--active {
+  opacity: 1;
+}
+
+.Automodal::backdrop {
+  display: none;
+}
+
+.Automodal__viewport {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.Automodal__item {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  position: absolute;
+  inset: 0;
+  transition: transform 300ms;
+}
+
+.Automodal--prev .Automodal__item--add {
+  transform: translateX(-100%);
+}
+
+.Automodal--prev .Automodal__item--remove {
+  transform: translateX(100%);
+}
+
+.Automodal--next .Automodal__item--add {
+  transform: translateX(100%);
+}
+
+.Automodal--next .Automodal__item--remove {
+  transform: translateX(-100%);
+}
+
+.Automodal__content,
+.Automodal__caption {
+  max-width: 100%;
+  pointer-events: all;
+}
+
+.Automodal__item--short .Automodal__content {
+  max-height: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+}
+
+.Automodal__item--short iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.Automodal__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Automodal__nav--prev {
+  left: 0;
+}
+
+.Automodal__nav--prev::before {
+  content: "<";
+}
+
+.Automodal__nav--next {
+  right: 0;
+}
+
+.Automodal__nav--next::before {
+  content: ">";
+}
+
+.Automodal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.Automodal__close::before {
+  content: "\2a2f";
+}

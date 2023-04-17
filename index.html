@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>automodal</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <p>
+      <a href="https://placekitten.com/600" data-automodal data-automodal-alt="alt text..." data-automodal-caption="i Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio beatae officia deleniti.">image</a>
+    </p>
+    <p>
+      <a href="https://www.youtube.com/watch?v=Cp-Ys_iFwnM&cc_load_policy=1&autoplay=1" data-automodal>youtube.com</a>
+    </p>
+    <p>
+      <a href="https://youtu.be/Cp-Ys_iFwnM?cc_load_policy=1" data-automodal data-automodal-title="youtu.be video embed">youtu.be</a>
+    </p>
+    <p>
+      <a href="https://www.youtube.com/shorts/pyDmpByjR7o" data-automodal="fancyname" data-automodal-caption="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dicta, reprehenderit, accusantium quasi aut assumenda consectetur libero magnam dolore soluta unde porro quidem fuga?">youtube short</a>
+    </p>
+    <p>
+      <a href="https://www.tiktok.com/@belmontu/video/7211902993610902830" data-automodal>tiktok</a>
+    </p>
+    <p>
+      <a href="https://www.instagram.com/p/Cq57cQdsNFc/" data-automodal>instagram</a>
+    </p>
+    <p>
+      <a href="https://www.instagram.com/reel/Cqv_BQAs3Um/" data-automodal>instagram reel</a>
+    </p>
+    <p>
+      <a href="https://vimeo.com/7809605" data-automodal data-automodal-caption="v Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio beatae officia deleniti.">vimeo.com</a>
+    </p>
+    <p>
+      <a href="https://www.google.com/maps/place/Washington,+DC/@38.8993278,-77.0846061,12z/data=!3m1!4b1!4m5!3m4!1s0x89b7c6de5af6e45b:0xc2524522d4885d2a!8m2!3d38.9071923!4d-77.0368707" data-automodal>washington dc</a>
+    </p>
+    <p>
+      <a href="https://www.google.com/maps/@40.7055651,-74.1180856,11z" data-automodal>lat, long</a>
+    </p>
+    <p>
+      <a href="https://fast.wistia.net/embed/iframe/lyrt57dn27" data-automodal data-automodal-type="iframe">iframe</a>
+    </p>
+    <p>
+      <a href="fetch.html" data-automodal data-automodal-type="fetch">fetch</a>
+    </p>
+    <p>
+      <a href="#demo" data-automodal data-automodal-caption="s Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio beatae officia deleniti.">#demo</a>
+    </p>
+    <div id="demo">
+      <p>#demo contents</p>
+    </div>
+    <p>
+      <a href="https://placekitten.com/600" data-automodal data-automodal-group="group" data-automodal-caption="i Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio beatae officia deleniti.">image</a>
+      <a href="https://www.youtube.com/watch?v=Cp-Ys_iFwnM&cc_load_policy=1" data-automodal data-automodal-group="group">youtube.com</a>
+      <a href="https://www.google.com/maps/@40.7055651,-74.1180856,11z" data-automodal data-automodal-group="group" data-automodal-caption="m Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio beatae officia deleniti.">lat, long</a>
+      <a href="https://fast.wistia.net/embed/iframe/lyrt57dn27" data-automodal data-automodal-group="group" data-automodal-type="iframe">iframe</a>
+      <a href="fetch.html" data-automodal data-automodal-group="group" data-automodal-type="fetch">fetch</a>
+      <a href="#demo" data-automodal data-automodal-group="group">#demo</a>
+    </p>
+    <script type="module">
+      import automodal from './index';
+
+      const targets = document.querySelectorAll('[data-automodal]');
+
+      for (const target of targets) {
+        automodal(target, {
+          googleMapsAPIKey: 'AIzaSyDqlCMWHw2THOOYiVkO8-PjkPTTAIpkxww',
+        });
+      }
+    </script>
+  </body>
+</html>
