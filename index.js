@@ -145,10 +145,10 @@ export default (target, options) => {
     const caption = target.getAttribute('data-automodal-caption') ?? '';
 
     return `
-      <div class="Automodal__item Automodal__item--${type} ${name && `Automodal__item--${name}`}">
+      <figure class="Automodal__item Automodal__item--${type} ${name && `Automodal__item--${name}`}">
         <div class="Automodal__content">${content}</div>
-        ${caption && `<div class="Automodal__caption">${caption}</div>`}
-      </div>
+        ${caption && `<figcaption class="Automodal__caption">${caption}</figcaption>`}
+      </figure>
     `;
   };
 
