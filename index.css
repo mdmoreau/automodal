@@ -2,6 +2,10 @@
   background: red;
 }
 
+figure {
+  margin: 0;
+}
+
 img,
 iframe {
   display: block;
