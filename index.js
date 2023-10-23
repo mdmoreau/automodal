@@ -1,4 +1,8 @@
 export default (target, options) => {
+  const reflow = () => {
+    document.documentElement.scrollTop;
+  };
+
   const animations = (element) => {
     return Promise.allSettled(element.getAnimations().map((animation) => animation.finished));
   };
@@ -200,16 +204,19 @@ export default (target, options) => {
 
         updating = true;
         dialog.classList.add(`Automodal--${dir}`);
-        remove.classList.add('Automodal__item--remove');
 
         await insert(group[index]);
         const add = viewport.lastElementChild;
         add.classList.add('Automodal__item--add');
 
+        reflow();
+        add.classList.remove('Automodal__item--add');
+        remove.classList.add('Automodal__item--remove');
+
+        await animations(add);
         await animations(remove);
         remove.remove();
 
-        add.classList.remove('Automodal__item--add');
         dialog.classList.remove(`Automodal--${dir}`);
         updating = false;
       }
@@ -255,6 +262,7 @@ export default (target, options) => {
       document.body.append(dialog);
       dialog.showModal();
       await insert(target);
+      reflow();
       dialog.classList.add('Automodal--active');
     };
 

@@ -37,7 +37,7 @@ iframe {
   margin: 0;
   padding: 0;
   border: 0;
-  transition: opacity 300ms;
+  transition: opacity 1s;
   background: rgba(0 0 0 / 75%);
   opacity: 0;
   overflow: hidden;
@@ -64,7 +64,8 @@ iframe {
   place-items: center;
   position: absolute;
   inset: 0;
-  transition: transform 300ms;
+  border: 1rem dashed yellow;
+  transition: transform 1s;
 }
 
 .Automodal--prev .Automodal__item--add {
