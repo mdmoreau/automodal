@@ -172,12 +172,12 @@ export default (target, options) => {
     const dialog = document.createElement('dialog');
     dialog.classList.add('Automodal');
     dialog.innerHTML = `
-      <div class="Automodal__viewport" tabindex="0"></div>
+      <button class="Automodal__close" aria-label="Close"></button>
+      <div class="Automodal__viewport"></div>
       ${group && `
         <button class="Automodal__nav Automodal__nav--prev" aria-label="Previous"></button>
         <button class="Automodal__nav Automodal__nav--next" aria-label="Next"></button>
       `}
-      <button class="Automodal__close" aria-label="Close"></button>
     `;
 
     const viewport = dialog.querySelector('.Automodal__viewport');
@@ -236,20 +236,6 @@ export default (target, options) => {
 
       if (e.key === 'ArrowRight') {
         nav('next');
-      }
-
-      if (e.key === 'Tab' && !e.shiftKey) {
-        if (document.activeElement === close) {
-          e.preventDefault();
-          viewport.focus();
-        }
-      }
-
-      if (e.key === 'Tab' && e.shiftKey) {
-        if (document.activeElement === viewport) {
-          e.preventDefault();
-          close.focus();
-        }
       }
 
       if (e.key === 'Escape') {
