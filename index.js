@@ -180,10 +180,10 @@ export default (target, options) => {
       `}
     `;
 
+    const close = dialog.querySelector('.Automodal__close');
     const viewport = dialog.querySelector('.Automodal__viewport');
     const prev = dialog.querySelector('.Automodal__nav--prev');
     const next = dialog.querySelector('.Automodal__nav--next');
-    const close = dialog.querySelector('.Automodal__close');
 
     const insert = async (target) => {
       viewport.insertAdjacentHTML('beforeend', await item(target));
