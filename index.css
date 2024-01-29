@@ -1,3 +1,9 @@
+:root {
+  --transition: 1s ease;
+}
+
+/* reset */
+
 :focus {
   background: red;
 }
@@ -25,6 +31,8 @@ iframe {
   display: block;
 }
 
+/* base */
+
 :root:has(.Automodal) {
   overflow: hidden;
 }
@@ -37,14 +45,14 @@ iframe {
   margin: 0;
   padding: 0;
   border: 0;
-  transition: opacity 1s;
+  transition: opacity var(--transition);
   background: none;
   opacity: 0;
   overflow: hidden;
 }
 
 .Automodal::backdrop {
-  transition: opacity 1s;
+  transition: opacity var(--transition);
   background: black;
   opacity: 0;
 }
@@ -82,7 +90,7 @@ iframe {
   position: absolute;
   inset: 0;
   border: 1rem dashed yellow;
-  transition: transform 1s;
+  transition: transform var(--transition);
 }
 
 .Automodal--prev .Automodal__item--add {
