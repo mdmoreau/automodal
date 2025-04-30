@@ -43,6 +43,10 @@ export default (target, options) => {
       return 'vimeo';
     }
 
+    if (href.includes('wistia.com')) {
+      return 'wistia';
+    }
+
     if (href.includes('google.com/maps/')) {
       return 'map';
     }
@@ -117,6 +121,13 @@ export default (target, options) => {
     if (type === 'vimeo') {
       const id = href.split('vimeo.com/')[1];
       const src = `https://player.vimeo.com/video/${id}`;
+
+      return iframe(src, title);
+    }
+
+    if (type === 'wistia') {
+      const id = href.split('wistia.com/medias/')[1];
+      const src = `https://fast.wistia.net/embed/iframe/${id}`;
 
       return iframe(src, title);
     }
